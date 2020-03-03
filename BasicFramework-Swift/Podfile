@@ -1,0 +1,33 @@
+platform :ios, '9.0'
+
+
+target 'BasicFramework' do
+
+  use_frameworks!
+
+  # 网络请求
+  pod 'Moya', '13.0.1'
+  # JSON模型转换
+  pod 'SwiftyJSON', '5.0.0'
+  pod 'HandyJSON', '5.0.1'
+  # 纯代码布局
+  pod 'SnapKit', '4.2.0'
+  # 响应式编程
+  pod 'RxSwift', '5.0.1'
+  pod 'MJRefresh', '3.2.0'
+  # 图片加载
+  pod 'SDWebImage', '5.2.2'
+#  # 轮播图
+#  pod 'LLCycleScrollView', '1.5.4'
+  # Ppi
+  pod 'DevicePpi'
+  
+  
+  
+	
+
+end
+
+
+
+
