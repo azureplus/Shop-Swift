@@ -43,10 +43,13 @@ func kFontBold(size: CGFloat) -> UIFont {
 }
 
 func kFont(size: CGFloat, weight: UIFont.Weight) -> UIFont {
-    let newSize = size / CGFloat(Ppi.getInfo() / 160)
+    let newSize = kFontSize(size: size)
     return UIFont.systemFont(ofSize: newSize, weight: weight)
-//    let scale = CGFloat(kScreenWidth) / 414.0
-//    return UIFont.systemFont(ofSize: size * scale, weight: weight)
+}
+
+func kFontSize(size: CGFloat) -> CGFloat {
+    let newSize = size / CGFloat(Ppi.getInfo() / 160)
+    return newSize
 }
 
 

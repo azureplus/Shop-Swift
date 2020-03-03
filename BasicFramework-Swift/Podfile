@@ -21,6 +21,8 @@ target 'BasicFramework' do
 #  pod 'LLCycleScrollView', '1.5.4'
   # Ppi
   pod 'DevicePpi'
+  # 购物车加减
+  pod 'PPNumberButton'
   
   
   

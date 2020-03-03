@@ -16,6 +16,7 @@ class CartListView: BasicView {
             let height = self.height - self.bottomView.height
             return CGRect(x: 0, y: 0, width: self.width, height: height)
         })(), style: UITableView.Style.plain)
+        list.backgroundColor = kDefaultBackGroundColor
         list.delegate = self
         list.dataSource = self
         list.lineAll()
@@ -24,6 +25,14 @@ class CartListView: BasicView {
         list.showsHorizontalScrollIndicator = false
         return list
     }()
+    
+    // 0: 普通  1: 编辑
+    var listEnum: Int = 0 {
+        willSet {
+            self.list.reloadData()
+            self.bottomView.listEnum = newValue
+        }
+    }
     
     // 底部
     private lazy var bottomView: CartListBottom = {
@@ -50,6 +59,7 @@ extension CartListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CartListCell = CartListCell.loadCode(table: tableView) as! CartListCell
+        cell.listEnum = self.listEnum
         return cell
     }
     
@@ -58,7 +68,7 @@ extension CartListView: UITableViewDataSource {
 extension CartListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(kScreenWidth / 3)
+        return countcoordinatesX(designWidth: 200)
     }
     
 }

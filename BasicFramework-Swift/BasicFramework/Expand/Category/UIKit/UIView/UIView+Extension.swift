@@ -73,6 +73,15 @@ extension UIView {
         }
     }
     
-    
+    func viewController() -> UIViewController? {
+        var responder: UIResponder? = self.next
+        repeat {
+            if responder!.isKind(of: UIViewController.self) {
+                return responder! as? UIViewController
+            }
+            responder = responder?.next
+        } while responder != nil
+        return nil
+    }
     
 }

@@ -112,7 +112,7 @@
 - (void)updateFrame {
     
     NSInteger top = (kIS_IPHONEX || kIS_IPHONEXR || kIS_IPHONE11 || kIS_IPHONE11Pro || kIS_IPHONE11ProMax) ? 44 : 20;
-    NSInteger margin = 0;
+    NSInteger margin = 5;
     NSInteger buttonHeight = 44;
     NSInteger buttonWidth = 44;
     NSInteger titleLabelHeight = 44;

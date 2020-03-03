@@ -36,6 +36,9 @@
 		4B81A21423CA030E0026EA9C /* BasicTabBarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B81A21323CA030E0026EA9C /* BasicTabBarItemModel.swift */; };
 		4B95A2D823CB3A80000E14F4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95A2D723CB3A80000E14F4 /* UIView+Extension.swift */; };
 		4B95A2DC23CB42B5000E14F4 /* BasicCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95A2DB23CB42B5000E14F4 /* BasicCollectionReusableView.swift */; };
+		4B96FE87240E806A0067664D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B96FE86240E806A0067664D /* NetworkManager.swift */; };
+		4B96FE8A240E82240067664D /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B96FE89240E82240067664D /* HomeAPI.swift */; };
+		4B96FE8C240E89950067664D /* ShopDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B96FE8B240E89950067664D /* ShopDetailController.swift */; };
 		4BBD4AF123C9E90300578434 /* GuideAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4AF023C9E90300578434 /* GuideAdView.swift */; };
 		4BBD4AF423C9E91500578434 /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4AF323C9E91500578434 /* BasicView.swift */; };
 		4BBD4AF723C9F7E100578434 /* BasicConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4AF623C9F7E100578434 /* BasicConstants.swift */; };
@@ -103,6 +106,9 @@
 		4B81A21323CA030E0026EA9C /* BasicTabBarItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTabBarItemModel.swift; sourceTree = "<group>"; };
 		4B95A2D723CB3A80000E14F4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4B95A2DB23CB42B5000E14F4 /* BasicCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionReusableView.swift; sourceTree = "<group>"; };
+		4B96FE86240E806A0067664D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4B96FE89240E82240067664D /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		4B96FE8B240E89950067664D /* ShopDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailController.swift; sourceTree = "<group>"; };
 		4BBD4AF023C9E90300578434 /* GuideAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideAdView.swift; sourceTree = "<group>"; };
 		4BBD4AF323C9E91500578434 /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
 		4BBD4AF623C9F7E100578434 /* BasicConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicConstants.swift; sourceTree = "<group>"; };
@@ -331,6 +337,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4B96FE85240E805B0067664D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4B96FE86240E806A0067664D /* NetworkManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4B96FE88240E821A0067664D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4B96FE89240E82240067664D /* HomeAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		4BBD4AEF23C9E8EE00578434 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +463,7 @@
 				EF4A335123C71013002D9FE5 /* Expand */,
 				EF4A335323C7101B002D9FE5 /* Resource */,
 				EF4A335023C71013002D9FE5 /* Vender */,
+				4B96FE85240E805B0067664D /* Service */,
 				EF4A335223C71013002D9FE5 /* SDKFile */,
 				EFB9500F23C7142200A222D0 /* Supporting Files */,
 			);
@@ -536,6 +559,7 @@
 		EF6D546123C807E800EE6C21 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4B96FE88240E821A0067664D /* API */,
 				EF6D546223C807F000EE6C21 /* Controller */,
 				4B7E619C23CA337400E77A70 /* View */,
 			);
@@ -546,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				EF6D546323C8080B00EE6C21 /* HomeController.swift */,
+				4B96FE8B240E89950067664D /* ShopDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -817,6 +842,7 @@
 				EFB9501723C714DB00A222D0 /* BasicViewController.swift in Sources */,
 				4B7E61A223CA3C5000E77A70 /* BasicTableCell.swift in Sources */,
 				EF6D546623C8083200EE6C21 /* BasicNavController.swift in Sources */,
+				4B96FE87240E806A0067664D /* NetworkManager.swift in Sources */,
 				EF64B04023CC1BA60041E9EC /* MineListView.swift in Sources */,
 				4B128117240D3230009A2954 /* SortMainView.swift in Sources */,
 				4B128110240D152E009A2954 /* CartController.swift in Sources */,
@@ -856,11 +882,13 @@
 				4B128125240D4ABA009A2954 /* CartListCell.swift in Sources */,
 				4B128121240D480D009A2954 /* MineItemCell.swift in Sources */,
 				4B12811B240D3469009A2954 /* SortMainCell.swift in Sources */,
+				4B96FE8A240E82240067664D /* HomeAPI.swift in Sources */,
 				EFB9503123C71A3E00A222D0 /* Common.swift in Sources */,
 				4BF3358C23CB13E700073050 /* BasicCollectionCell.swift in Sources */,
 				EF94A8AC23CD655600615873 /* Swizzling.swift in Sources */,
 				4B95A2DC23CB42B5000E14F4 /* BasicCollectionReusableView.swift in Sources */,
 				EF64B03D23CC18DE0041E9EC /* UITabBar+Extension.swift in Sources */,
+				4B96FE8C240E89950067664D /* ShopDetailController.swift in Sources */,
 				4B1280FC240D0527009A2954 /* HomeCarouselCell.swift in Sources */,
 				EF4A333C23C70F87002D9FE5 /* AppDelegate.swift in Sources */,
 				4B81A21223C9FDBE0026EA9C /* GuideFeaturesView.swift in Sources */,

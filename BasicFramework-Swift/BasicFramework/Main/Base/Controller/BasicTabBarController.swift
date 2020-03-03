@@ -54,8 +54,6 @@ class BasicTabBarController: UITabBarController {
         self.setValue(self.basicTabBar, forKeyPath: "tabBar")
         self.setRootController()
         self.basicTabBar.models = self.models
-        
-        self.selectedIndex = 2
     }
     
     override func viewDidLayoutSubviews() {

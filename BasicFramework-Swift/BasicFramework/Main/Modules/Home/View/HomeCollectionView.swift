@@ -37,6 +37,11 @@ extension HomeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("AAAA")
+        let vc: ShopDetailController = ShopDetailController()
+        self.viewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

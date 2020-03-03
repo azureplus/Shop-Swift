@@ -10,10 +10,26 @@ import UIKit
 
 class CartListBottom: BasicView {
     
+    // 0: 普通  1: 编辑
+    var listEnum: Int = 0 {
+        willSet {
+            self.allDesc.isHidden = newValue == 1
+            self.priceLabel.isHidden = newValue == 1
+            self.tipLabel.isHidden = newValue == 1
+        }
+    }
+    
     // 全选
     private lazy var chooseButton: UIButton = {
         let chooseButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        chooseButton.backgroundColor = UIColor.red
+        chooseButton.setTitle(" 全选", for: UIControl.State.normal)
+        chooseButton.setTitle(" 全选", for: UIControl.State.highlighted)
+        chooseButton.setTitleColor(kSecondaryTextColor, for: UIControl.State.normal)
+        chooseButton.setTitleColor(kSecondaryTextColor, for: UIControl.State.highlighted)
+        chooseButton.setImage(kImageNamed(imageName: "check"), for: UIControl.State.normal)
+        chooseButton.setImage(kImageNamed(imageName: "check"), for: UIControl.State.highlighted)
+        chooseButton.setImage(kImageNamed(imageName: "check_select"), for: UIControl.State.selected)
+        chooseButton.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: countcoordinatesX(designWidth: 30), bottom: 0, right: 0)
         return chooseButton
     }()
     
@@ -30,29 +46,32 @@ class CartListBottom: BasicView {
     // 总计
     private lazy var allDesc: UILabel = {
         let allDesc: UILabel = UILabel()
-        allDesc.backgroundColor = UIColor.blue
-        allDesc.text = "asd"
+        allDesc.textColor = kSecondaryTextColor
+        allDesc.font = kFontRegular(size: 34)
+        allDesc.text = "总计："
         return allDesc
     }()
     
     // 金额
     private lazy var priceLabel: UILabel = {
         let priceLabel: UILabel = UILabel()
-        priceLabel.backgroundColor = UIColor.yellow
-        priceLabel.text = "asd"
+        priceLabel.textColor = UIColor.red
+        priceLabel.font = kFontRegular(size: 32)
+        priceLabel.text = "¥439.00"
         return priceLabel
     }()
     
     // 提示
     private lazy var tipLabel: UILabel = {
         let tipLabel: UILabel = UILabel()
-        tipLabel.backgroundColor = UIColor.blue
-        tipLabel.text = "asd"
+        tipLabel.font = kFontRegular(size: 20)
+        tipLabel.textColor = kSecondaryTextColor
+        tipLabel.text = "全场满199元包邮"
         return tipLabel
     }()
 
     override func initUI() {
-        self.backgroundColor = UIColor.orange
+        self.backgroundColor = kWhiteColor
         self.addSubview(self.chooseButton)
         self.addSubview(self.actionButton)
         self.addSubview(self.priceLabel)
@@ -62,7 +81,6 @@ class CartListBottom: BasicView {
             make.left.equalToSuperview()
             make.top.equalToSuperview()
             make.height.equalToSuperview()
-            make.width.equalTo(countcoordinatesX(designWidth: 100))
         }
         self.actionButton.snp.makeConstraints { (make) in
             make.right.equalToSuperview()
@@ -71,17 +89,17 @@ class CartListBottom: BasicView {
             make.width.equalTo(self.actionButton.snp.height).multipliedBy(1.7)
         }
         self.priceLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(countcoordinatesX(designWidth: 5))
             make.right.equalTo(self.actionButton.snp.left).offset(countcoordinatesX(designWidth: -10))
             make.height.equalToSuperview().dividedBy(2)
         }
         self.tipLabel.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(countcoordinatesX(designWidth: -5))
             make.right.equalTo(self.priceLabel.snp.right)
             make.height.equalTo(self.priceLabel.snp.height)
         }
         self.allDesc.snp.makeConstraints { (make) in
-            make.right.equalTo(self.priceLabel.snp.left).offset(countcoordinatesX(designWidth: -10))
+            make.right.equalTo(self.priceLabel.snp.left)
             make.centerY.equalTo(self.priceLabel.snp.centerY)
         }
     }

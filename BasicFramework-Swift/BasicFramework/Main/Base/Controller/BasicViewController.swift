@@ -18,7 +18,7 @@ class BasicViewController: UIViewController {
     var isShowLiftBack: Bool {
         didSet {
             if self.isShowLiftBack == true {
-                let image: UIImage! = kImageNamed(imageName: "navigBarHidden_back")
+                let image: UIImage! = kImageNamed(imageName: "back")
                 self.customNavBar.wr_setLeftButton(withNormal: image, highlighted: image)
             }
             else {

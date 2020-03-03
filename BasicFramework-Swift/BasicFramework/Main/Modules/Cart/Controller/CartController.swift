@@ -21,9 +21,7 @@ class CartController: BasicViewController {
     }()
     
     // 0: 普通  1: 编辑
-    private lazy var listEnum: Int = {
-       return 0
-    }()
+    private lazy var listEnum: Int = 0
     
 
     override func viewDidLoad() {
@@ -40,10 +38,10 @@ class CartController: BasicViewController {
         })
     }
     
-    
     func changeListEnum() {
         let title = self.listEnum == 0 ? "编辑" : "完成"
         self.customNavBar.wr_setRightButton(withTitle: title, titleColor: kMainTextColor)
+        self.list.listEnum = self.listEnum
     }
 
 }
